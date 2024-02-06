@@ -5,12 +5,12 @@
 }
 
 body{
-    background-color: #F9D99B;
+    background-color: #F9D998;
 }
 
 header{
     width: 100vw;
-    height: 15vh;
+    height: 25vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,38 +40,51 @@ main{
     align-items: center;
 }
 
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 80%;
+    background-color: #F4A45B;
+    border-radius: 40px;
+}
+.cadastro h2{
+    font-family: 'Inter Tight', sans-serif;
+    color: whitesmoke;
+}
+
 .form{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 5%;
-    border-radius: 40px;
-    width: 30%;
-    height: 80%;
-    background-color: #F4A45B;
+    gap: 1.3%;
+    width: 100%;
+    height: 90%;
     font-family: 'Inter Tight', sans-serif;
     color: whitesmoke;
 }
 
 .form input{
-    width: 50%;
+    width: 100%;
+    height:25%;
+    border-radius: 10px;
     border-color: transparent;
     opacity: 50%;
     outline: 0;
 }
 
-#password{
-    margin-bottom: 6%;
-}
-
-.button_login{
+.button_cadastro{
+    margin-top: 3%;
     border-color: transparent;
     background-color:#ff8a2c;
     color: whitesmoke;
     font-weight: 700;
-    border-radius: 30px;
-    width: 26%;
-    height: 12%;
+    border-radius: 10px;
+    width: 100%;
+    height: 30%;
+    cursor: pointer;
 }
  

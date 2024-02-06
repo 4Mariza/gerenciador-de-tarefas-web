@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inter Tight', sans-serif;
+    color: whitesmoke;
+}
+
+header{
+    width: 100%;
+    height: 12%;
+    background-color: #F4A45B;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+main{
+    width: 100%;
+    height: 88%;
+    background-color: #F9D99B;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tarefa{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 12%;
+    background-color: #f4a55bb2;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 30px;
+
+}
+
+.mainmenubtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.mainmenubtn:hover {
+    transform: rotate(90deg);
+}
+
+.dropdown {
+    width: 15%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-child {
+    background-color: #cc7a2c9d;
+    border-radius: 10px;
+    padding: 5%;
+    display: none;
+    min-width: 50%;
+    min-height: 90%;
+}
+.dropdown-child p{
+    text-align: start;
+}
+
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+
+input[type = "checkbox"]{
+    border-style:none;
+    width: 15%;
+    height: 30%;
+}
+
+#editar{
+    cursor: pointer
+}
+
+#lixeira{
+    cursor: pointer;
+}
