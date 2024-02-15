@@ -47,7 +47,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 25%;
-    height: 80%;
+    height: 100%;
     background-color: #F4A45B;
     border-radius: 40px;
 }
@@ -84,7 +84,7 @@ main{
     font-weight: 700;
     border-radius: 10px;
     width: 100%;
-    height: 30%;
+    height: 15%;
     cursor: pointer;
 }
  
