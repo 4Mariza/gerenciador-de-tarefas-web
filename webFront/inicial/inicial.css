@@ -18,12 +18,13 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-size: xx-large;
     font-weight: 600;
 }
 
-main{
+.main{
     width: 100%;
     height: 88%;
     background-color: #F9D99B;
@@ -31,6 +32,10 @@ main{
     flex-direction:column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.adicionar{
+    background-color: #F4A45B;
 }
 
 .tarefa{
@@ -98,5 +103,75 @@ input[type = "checkbox"]{
 }
 
 #lixeira{
+    cursor: pointer;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4%;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter Tight', sans-serif;
+    color: whitesmoke;
+}
+.form input{
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    font-size: larger;
+    border-color: transparent;
+    opacity: 50%;
+    outline: 0;
+}
+
+.criar_tarefa{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 50%;
+    background-color: #F4A45B;
+    border-radius: 40px;
+}
+
+.button_criar{
+    margin-top: 3%;
+    border-color: transparent;
+    background-color:#ff8a2c;
+    color: whitesmoke;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 100%;
+    height: 15%;
+    cursor: pointer;
+}
+
+.editar_tarefa{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 50%;
+    background-color: #F4A45B;
+    border-radius: 40px;
+}
+
+.button_editar{
+    margin-top: 3%;
+    border-color: transparent;
+    background-color:#ff8a2c;
+    color: whitesmoke;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 100%;
+    height: 15%;
     cursor: pointer;
 }

@@ -11,54 +11,36 @@
     <title>Inicial Page</title>
 </head>
 <body>
-    <header>To do Workspace</header>
-    <main>
-        <div class="tarefa" id="cardContainer">
-            <!-- <div class="dropdown">
-                <button class="mainmenubtn">
-                    <img src="../img/arrow-right-bold-svgrepo-com.svg" alt="" width="40%">
-                </button>
-                <div class="dropdown-child">
-                  <p>Descrição da tarefa aqui nsafjdbashfb shfbhasjfbwghaf vwehfbhvhavn bsbdvh bsahdfbsbdfbsjdi</p>
-                </div>
-            </div>
-            <input type="checkbox" name="true_false" id="checkbox">
-            <h2>Título da tarefa</h2>
-            <span>Conclusão: 30/01/2024</span>
-            <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar">
-            <img src="../img/trash-bin-minimalistic-svgrepo-com.svg" alt="" width="3%" id="lixeira"> -->
-        </div>
-        <!-- <div class="tarefa">
-            <div class="dropdown">
-                <button class="mainmenubtn">
-                    <img src="../img/arrow-right-bold-svgrepo-com.svg" alt="" width="40%">
-                </button>
-                <div class="dropdown-child">
-                  <p>Descrição da tarefa aqui nsafjdbashfb shfbhasjfbwghaf vwehfbhvhavn bsbdvh bsahdfbsbdfbsjdi</p>
-                </div>
-              </div>
-            <input type="checkbox" name="true_false" id="checkbox">
-            <h2>Título da tarefa</h2>
-            <span>Conclusão: 30/01/2024</span>
-            <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar">
-            <img src="../img/trash-bin-minimalistic-svgrepo-com.svg" alt="" width="3%" id="lixeira">
-        </div>
-        <div class="tarefa">
-            <div class="dropdown">
-                <button class="mainmenubtn">
-                    <img src="../img/arrow-right-bold-svgrepo-com.svg" alt="" width="40%">
-                </button>
-                <div class="dropdown-child">
-                  <p>Descrição da tarefa aqui nsafjdbashfb shfbhasjfbwghaf vwehfbhvhavn bsbdvh bsahdfbsbdfbsjdi</p>
-                </div>
-              </div>
-            <input type="checkbox" name="true_false" id="checkbox">
-            <h2>Título da tarefa</h2>
-            <span>Conclusão: 30/01/2024</span>
-            <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar">
-            <img src="../img/trash-bin-minimalistic-svgrepo-com.svg" alt="" width="3%" id="lixeira">
-        </div> -->
-
+    <header>
+       <h2>To do Workspace</h2>
+        <img src="../img/plus-svgrepo-com.svg" alt="" class="adicionar" id="adicionar">
+    </header>
+    <main class="main">
+        <div class="tarefa" id="cardContainer"></div>
+                    <div class="criar_tarefa" id="criar_tarefa">
+                        <form action="" method="post" class="form">
+                            <h2>CRIAR TAREFA</h2>
+                            <label for="titulo">Título da tarefa:</label>
+                            <input type="text" id="titulo" name="titulo" placeholder="insira o título aqui">
+                            <label for="data"> Data de conclusão:</label>
+                            <input type="text" id="data" name="data" placeholder="insira a data aqui...">
+                            <label for="descricao"> Descrição da tarefa:</label>
+                            <input type="text" id="descricao" name="descricao" placeholder="insira a descrição...">
+                        </form>
+                        <button type="submit" class="button_criar" id="button_criar" onclick="criarTarefa()">ADICIONAR TAREFA</button>
+                    </div>
+                    <div class="editar_tarefa" id="editar_tarefa">
+                        <form action="" method="post" class="form">
+                            <h2>EDITAR TAREFA</h2>
+                            <label for="titulo">Título da tarefa:</label>
+                            <input type="text" id="tituloAtualizado" name="titulo" placeholder="insira o título aqui">
+                            <label for="data"> Data de conclusão:</label>
+                            <input type="text" id="dataAtualizada" name="data" placeholder="insira a data aqui...">
+                            <label for="descricao"> Descrição da tarefa:</label>
+                            <input type="text" id="descricaoAtualizada" name="descricao" placeholder="insira a descrição...">
+                        </form>
+                        <button type="submit" class="button_editar" id="button_editar" onclick="">EDITAR TAREFA</button>
+                    </div>
     </main>
     <footer></footer>
 </body>
