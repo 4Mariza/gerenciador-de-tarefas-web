@@ -22,15 +22,15 @@
       "nome": "Teste",
       "email": "Teste@teste.com",
       "senha": "123",
-      "id":4 
+      "id": 4
     }
   ],
   "tarefas": [
     {
-      "id": 1,
-      "descrição": "Limpar a Casa",
-      "dataConclusão": "31/01/2024",
-      "idUsuario": 1
+      "descrição": "Limpar a cozinha",
+      "dataConclusão": "22/02/2024",
+      "idUsuario": 1,
+      "id": 1
     },
     {
       "id": 2,

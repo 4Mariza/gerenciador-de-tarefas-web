@@ -6,6 +6,7 @@
 
 body{
     background-color: #F9D998;
+    background-image: url(../img/cadastro.png);
 }
 
 header{
@@ -33,7 +34,7 @@ header{
 
 main{
     width: 100vw;
-    height: 50vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,7 +63,7 @@ main{
     justify-content: center;
     gap: 1.3%;
     width: 100%;
-    height: 90%;
+    height: 80%;
     font-family: 'Inter Tight', sans-serif;
     color: whitesmoke;
 }
@@ -82,6 +83,7 @@ main{
     background-color:#ff8a2c;
     color: whitesmoke;
     font-weight: 700;
+    font-size: medium;
     border-radius: 10px;
     width: 100%;
     height: 15%;

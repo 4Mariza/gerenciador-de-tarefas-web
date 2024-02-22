@@ -1,4 +1,3 @@
-
 const criarCard = async (idUsuario) => {
     const url = `http://localhost:5080/tarefas`
     const response = await fetch(url)
@@ -24,7 +23,7 @@ const criarCard = async (idUsuario) => {
                         <p>${item.descrição}</p>
                     </div>
                 </div>
-                <input type="checkbox" name="true_false" id="checkbox">
+                <input type="checkbox" name="true_false" id="checkbox${item.id}">
                 <h2>${item.descrição}</h2>
                 <span>${item.dataConclusão}</span>
                 <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar${item.id}"> 
@@ -32,8 +31,6 @@ const criarCard = async (idUsuario) => {
             `
 
             cardContainer.appendChild(card)
-
-            console.log(cardContainer)
 
             const lixeira = document.getElementById('lixeira' + item.id)
             lixeira.addEventListener('click', function () {
@@ -105,7 +102,7 @@ const editarTarefa = async (tarefa) => {
     const response = await fetch(url)
     const data = await response.json()
 
-    console.log(data);
+    console.log(data.id);
 
     const divTarefa = document.getElementById('editar_tarefa')
     divTarefa.style.display = 'flex'
@@ -114,13 +111,13 @@ const editarTarefa = async (tarefa) => {
     botao.addEventListener('click', async () => {
         const tituloInput = document.getElementById('tituloAtualizado').value
         const dataInput = document.getElementById('dataAtualizada').value
-    
+        
         const tarefaAtualizada = {
             descrição: tituloInput,
             dataConclusão: dataInput,
             idUsuario: data.idUsuario
         }
-    
+        
         const options = {
             method: 'PUT',
             headers: {
@@ -129,8 +126,8 @@ const editarTarefa = async (tarefa) => {
             body: JSON.stringify(tarefaAtualizada),
         }
         await fetch(url, options)
+        window.location.reload()
     })
 
-    window.location.reload()
 }
-
+criarCard(3)
