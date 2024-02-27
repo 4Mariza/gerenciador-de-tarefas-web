@@ -1,4 +1,53 @@
-const criarCard = async (idUsuario) => {
+// const criarCard = async (idUsuario) => {
+//     const url = `http://localhost:5080/tarefas`
+//     const response = await fetch(url)
+//     const tarefas = await response.json()
+
+//     const cardContainer = document.getElementById('cardContainer')
+//     cardContainer.className = 'main'
+
+//     tarefas.forEach((item) => {
+
+//         if (idUsuario == item.idUsuario) {
+
+//             const card = document.createElement('div')
+
+//             card.classList.add('tarefa')
+
+//             card.innerHTML = `
+//                 <div class="dropdown">
+//                     <button class="mainmenubtn">
+//                         <img src="../img/arrow-right-bold-svgrepo-com.svg" alt="" width="40%">
+//                     </button>
+//                     <div class="dropdown-child">
+//                         <p>${item.descrição}</p>
+//                     </div>
+//                 </div>
+//                 <input type="checkbox" name="true_false" id="checkbox${item.id}">
+//                 <h2>${item.descrição}</h2>
+//                 <span>${item.dataConclusão}</span>
+//                 <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar${item.id}"> 
+//                 <img src="../img/trash-bin-minimalistic-svgrepo-com.svg" alt="" width="3%" id="lixeira${item.id}">
+//             `
+
+//             cardContainer.appendChild(card)
+
+//             const lixeira = document.getElementById('lixeira' + item.id)
+//             lixeira.addEventListener('click', function () {
+//                 excluirTarefa(item.id)
+//             })
+
+//             const editar = document.getElementById('editar' + item.id)
+//             editar.addEventListener('click', () => {
+//                 editarTarefa(item.id)
+//             })
+//         }
+//     })
+// }
+
+//criarCard(localStorage.getItem('id'))
+
+constCriarCardEComentario = async () => {
     const url = `http://localhost:5080/tarefas`
     const response = await fetch(url)
     const tarefas = await response.json()
@@ -7,46 +56,71 @@ const criarCard = async (idUsuario) => {
     cardContainer.className = 'main'
 
     tarefas.forEach((item) => {
+        const card = document.createElement('div')
 
-        if (idUsuario == item.idUsuario) {
+        card.classList.add('tarefa')
 
-            const card = document.createElement('div')
-
-            card.classList.add('tarefa')
-
-            card.innerHTML = `
-                <div class="dropdown">
-                    <button class="mainmenubtn">
-                        <img src="../img/arrow-right-bold-svgrepo-com.svg" alt="" width="40%">
-                    </button>
-                    <div class="dropdown-child">
-                        <p>${item.descrição}</p>
+        card.innerHTML = `
+                    <div class="dropdown">
+                        <button class="mainmenubtn">
+                            <img src="../img/arrow-right-bold-svgrepo-com.svg" alt="" width="40%">
+                        </button>
+                        <div class="dropdown-child">
+                            <p>${item.descrição}</p>
+                        </div>
                     </div>
-                </div>
-                <input type="checkbox" name="true_false" id="checkbox${item.id}">
-                <h2>${item.descrição}</h2>
-                <span>${item.dataConclusão}</span>
-                <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar${item.id}"> 
-                <img src="../img/trash-bin-minimalistic-svgrepo-com.svg" alt="" width="3%" id="lixeira${item.id}">
-            `
+                    <input type="checkbox" name="true_false" id="checkbox${item.id}">
+                    <h2>${item.descrição}</h2>
+                    <span>${item.dataConclusão}</span>
+                    <img src="../img/pencil-svgrepo-com.svg" alt="" width="3%" id="editar${item.id}"> 
+                    <img src="../img/trash-bin-minimalistic-svgrepo-com.svg" alt="" width="3%" id="lixeira${item.id}">
+                    <img src="../img/comment-svgrepo-com.svg" alt="" width="3%" id="comment${item.id}">
+                `
+        cardContainer.appendChild(card)
 
-            cardContainer.appendChild(card)
+        const comentario = document.getElementById('comment' + item.id)
+        comentario.addEventListener('click', function () {
 
-            const lixeira = document.getElementById('lixeira' + item.id)
-            lixeira.addEventListener('click', function () {
-                excluirTarefa(item.id)
-            })
+            const commentContainer = document.getElementById('comentarios')
+            commentContainer.className = 'comentarios'
 
-            const editar = document.getElementById('editar' + item.id)
-            editar.addEventListener('click', () => {
-                editarTarefa(item.id)
-            })
-        }
+                console.log(item.comentarios);
+                
+                item.comentarios.forEach((elemento) => {
+                    console.log(elemento)
+                    
+                    const comment = document.createElement('div')
+                    comment.classList.add('comentarios-layout')
+    
+                    comment.innerHTML = `
+                        <img src="${elemento.foto}" alt="" id="foto_perfil" width="18%">
+                        <div class="infos">
+                            <p class="texto">${elemento.comentario}</p>
+                            <div class="usuario-data">
+                                <span>${elemento.usuarioId}</span>
+                                <span>${elemento.data}</span>
+                            </div>
+                        </div>
+                        `
+                    commentContainer.appendChild(comment)
+                })
+                commentContainer.style.display = "flex"
+
+
+        })
+
+        // const lixeira = document.getElementById('lixeira' + item.id)
+        // lixeira.addEventListener('click', function () {
+        //     excluirTarefa(item.id)
+        // })
+
+        // const editar = document.getElementById('editar' + item.id)
+        // editar.addEventListener('click', () => {
+        //     editarTarefa(item.id)
+        // })
     })
 
 }
-
-criarCard(localStorage.getItem('id'))
 
 const adicionar = document.getElementById('adicionar')
 adicionar.addEventListener('click', async => {
@@ -111,13 +185,13 @@ const editarTarefa = async (tarefa) => {
     botao.addEventListener('click', async () => {
         const tituloInput = document.getElementById('tituloAtualizado').value
         const dataInput = document.getElementById('dataAtualizada').value
-        
+
         const tarefaAtualizada = {
             descrição: tituloInput,
             dataConclusão: dataInput,
             idUsuario: data.idUsuario
         }
-        
+
         const options = {
             method: 'PUT',
             headers: {
@@ -130,4 +204,4 @@ const editarTarefa = async (tarefa) => {
     })
 
 }
-criarCard(3)
+constCriarCardEComentario()

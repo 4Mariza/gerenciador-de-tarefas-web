@@ -4,25 +4,31 @@
       "id": 1,
       "nome": "João da Silva",
       "email": "joao@silva.com",
-      "senha": "joao"
+      "senha": "joao",
+      "foto":"../webFront/img/pokemon1.webp",
+      "premium": true
     },
     {
       "id": 2,
       "nome": "Maria Salvagni",
       "email": "maria@salvagni.com",
-      "senha": "maria"
+      "senha": "maria",
+      "foto":"../img/pokemon2.png",
+      "premium": true
     },
     {
       "id": 3,
       "nome": "Gabriel Pereira",
       "email": "gabriel@pereira.com",
-      "senha": "gabriel"
+      "senha": "gabriel",
+      "premium": false
     },
     {
       "nome": "Teste",
       "email": "Teste@teste.com",
       "senha": "123",
-      "id": 4
+      "id": 4,
+      "premium": false
     }
   ],
   "tarefas": [
@@ -30,7 +36,16 @@
       "descrição": "Limpar a cozinha",
       "dataConclusão": "22/02/2024",
       "idUsuario": 1,
-      "id": 1
+      "id": 1,
+      "comentarios": [
+        {
+          "id": 1,
+          "usuarioId":2,
+          "foto":"../img/pokemon2.png",
+          "comentario":"Use o veja para armários, é muito bom!",
+          "data":"Fev 27"
+        }
+      ]
     },
     {
       "id": 2,
@@ -42,7 +57,16 @@
       "id": 3,
       "descrição": "Novo emprego",
       "dataConclusão": "10/02/2024",
-      "idUsuario": 3
+      "idUsuario": 3,
+      "comentarios": [
+        {
+          "id": 1,
+          "usuarioId":1,
+          "foto":"../img/pokemon1.webp",
+          "comentario":"Que legal!",
+          "data":"Fev 27"
+        }
+      ]
     },
     {
       "id": 4,

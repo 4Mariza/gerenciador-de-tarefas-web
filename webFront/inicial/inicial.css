@@ -7,6 +7,8 @@
 body{
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Inter Tight', sans-serif;
     color: whitesmoke;
     background-image: url(../img/inicial.png);
@@ -44,7 +46,7 @@ header{
 .tarefa{
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 50%;
     height: 20%;
     background-color: #f4a55bb2;
     align-items: center;
@@ -101,11 +103,7 @@ input[type = "checkbox"]{
     height: 30%;
 }
 
-#editar{
-    cursor: pointer
-}
-
-#lixeira{
+img{
     cursor: pointer;
 }
 
@@ -177,4 +175,51 @@ input[type = "checkbox"]{
     width: 100%;
     height: 15%;
     cursor: pointer;
+}
+
+.comentarios{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    place-self: end;
+    background-color:#ff8b2c83;
+    border-style: solid;
+    border-radius: 10px;
+    width: 20%;
+    height: 15%;
+}
+
+.comentarios-layout{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    place-items: center;
+    gap: 8% ;
+}
+
+#foto_perfil{
+    border-radius: 100%;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    width:90%;
+    height: 90%;
+}
+.texto{
+    text-align: justify;
+    font-size: large;
+    font-weight: 600;
+}
+
+.usuario-data{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    font-size: small;
+    color: papayawhip;
 }
