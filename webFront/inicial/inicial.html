@@ -12,8 +12,14 @@
 </head>
 <body>
     <header>
+        <div class="greeting">
+            <p id="user_greeting"></p>
+        </div>
        <h2>To do Workspace</h2>
-        <img src="../img/plus-svgrepo-com.svg" alt="" class="adicionar" id="adicionar">
+       <div class="add_task">
+           <span>Adicionar Tarefa</span>
+           <img src="../img/plus-svgrepo-com.svg" alt="" class="adicionar" id="adicionar">
+       </div>
     </header>
     <main class="main">
         <div class="tarefa" id="cardContainer"></div>
@@ -41,6 +47,22 @@
                         </form>
                         <button type="submit" class="button_editar" id="button_editar" onclick="">EDITAR TAREFA</button>
                     </div>
+                    <!-- <div class="comentarios" id="comentarios">
+                        <div class="comentarios-layout">
+                            <img src="" alt="" class="foto_perfil" width="18%">
+                            <div class="infos">
+                                <p class="texto">${elemento.comentario}</p>
+                                <div class="usuario-data">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment_input">
+                            <input type="text" name="comentario" class="comentario" placeholder="Escreva seu comentário aqui...">
+                            <img src="../img/send-alt-1-svgrepo-com.svg" alt="" class="enviar">
+                        </div>
+                    </div> -->
     </main>
     <footer></footer>
 </body>

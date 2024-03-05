@@ -7,6 +7,8 @@
 body{
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Inter Tight', sans-serif;
     color: whitesmoke;
     background-image: url(../img/inicial.png);
@@ -40,11 +42,16 @@ header{
     background-color: #F4A45B;
     cursor: pointer;
 }
+.add_task{
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+}
 
 .tarefa{
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 50%;
     height: 20%;
     background-color: #f4a55bb2;
     align-items: center;
@@ -53,60 +60,18 @@ header{
 
 }
 
-.mainmenubtn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    color: white;
-    border: none;
+img{
     cursor: pointer;
 }
 
-.mainmenubtn:hover {
-    transform: rotate(90deg);
+.editar{
+    width: 5%;
 }
-
-.dropdown {
-    width: 15%;
-    height: 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    display: inline-block;
+.excluir{
+    width: 5%;
 }
-
-.dropdown-child {
-    background-color: #cc7a2c9d;
-    border-radius: 10px;
-    padding: 5%;
-    display: none;
-    min-width: 50%;
-    min-height: 90%;
-}
-.dropdown-child p{
-    text-align: start;
-}
-
-.dropdown:hover .dropdown-child {
-    display: block;
-}
-
-input[type = "checkbox"]{
-    border-style:none;
-    width: 15%;
-    height: 30%;
-}
-
-#editar{
-    cursor: pointer
-}
-
-#lixeira{
-    cursor: pointer;
+.comentar{
+    width: 5%;
 }
 
 .form{
@@ -177,4 +142,77 @@ input[type = "checkbox"]{
     width: 100%;
     height: 15%;
     cursor: pointer;
+}
+
+.comentarios{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    place-self: center;
+    background-color:#faa660;
+    border-style: solid;
+    border-radius: 10px;
+    width: 50%;
+    height: 80%;
+}
+
+.comentarios-layout{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    place-items: top;
+    gap: 8% ;
+}
+
+.comentario{
+    height: 100%;
+    width: 100%;
+    font-size: larger;
+    border-color: transparent;
+    opacity: 50%;
+    outline: 0;
+    padding-left: 5%;
+}
+
+.comment_input{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+}
+
+.enviar{
+    width: 6%;
+    position: absolute;
+    right: 2%;
+    place-self: center;
+}
+
+.foto_perfil{
+    width: 7%;
+    height: 10%;
+    border-radius: 100%;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    width:90%;
+    height: 90%;
+}
+.texto{
+    text-align: justify;
+    font-size: large;
+    font-weight: 600;
+}
+
+.usuario-data{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    font-size: small;
+    color: papayawhip;
 }

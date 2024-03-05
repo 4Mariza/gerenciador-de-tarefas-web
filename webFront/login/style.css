@@ -7,6 +7,8 @@
 body{
     background-color: #F9D998;
     background-image: url(../img/Login\ page.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header{

@@ -4,40 +4,34 @@
       "id": 1,
       "nome": "João da Silva",
       "email": "joao@silva.com",
-      "senha": "joao"
+      "senha": "joao",
+      "foto": "../webFront/img/pokemon1.webp",
+      "premium": 1
     },
     {
       "id": 2,
       "nome": "Maria Salvagni",
       "email": "maria@salvagni.com",
-      "senha": "maria"
+      "senha": "maria",
+      "foto": "../img/pokemon2.png",
+      "premium": 1
     },
     {
       "id": 3,
       "nome": "Gabriel Pereira",
       "email": "gabriel@pereira.com",
-      "senha": "gabriel"
+      "senha": "gabriel",
+      "premium": 0
     },
     {
       "nome": "Teste",
       "email": "Teste@teste.com",
       "senha": "123",
-      "id": 4
+      "id": 4,
+      "premium": 0
     }
   ],
   "tarefas": [
-    {
-      "descrição": "Limpar a cozinha",
-      "dataConclusão": "22/02/2024",
-      "idUsuario": 1,
-      "id": 1
-    },
-    {
-      "id": 2,
-      "descrição": "Aprender inglês",
-      "dataConclusão": "30/10/2024",
-      "idUsuario": 1
-    },
     {
       "id": 3,
       "descrição": "Novo emprego",
@@ -55,6 +49,36 @@
       "descrição": "Conhecer mais pessoas",
       "dataConclusão": "20/05/2024",
       "idUsuario": 3
+    },
+    {
+      "descrição": "teste2",
+      "dataConclusão": "05/05/2024",
+      "idUsuario": "1",
+      "id": 6
+    },
+    {
+      "descrição": "Aprender Inglês",
+      "dataConclusão": "05/03/2024",
+      "idUsuario": "1",
+      "id": 7
+    }
+  ],
+  "comentarios": [
+    {
+      "id": 1,
+      "usuarioId":2,
+      "tarefaId":1,
+      "foto":"../img/pokemon2.png",
+      "comentario":"Use o veja para armários, é muito bom!",
+      "data":"Fev 27"
+    },
+    {
+      "id": 2,
+      "usuarioId":3,
+      "tarefaId":7,
+      "foto":"../img/pokemon1.webp",
+      "comentario":"Que legal!",
+      "data":"Fev 27"
     }
   ]
 }
