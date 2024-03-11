@@ -14,12 +14,12 @@ const criarCard = async () => {
   const usuario = await resposta.json();
 
   const cardContainer = document.getElementById("cardContainer");
-  cardContainer.className = "main";
+  cardContainer.className = "cardContainer";
 
   tarefas.forEach((item) => {
     if (usuario.id == item.idUsuario) {
       const card = document.createElement("div");
-      card.className = "tarefa";
+      card.className = "taskCard";
 
       const titulo = document.createElement("h2");
       titulo.className = "titulo";
@@ -63,7 +63,7 @@ const criarCard = async () => {
       cardContainer.appendChild(card);
     } else {
       const card = document.createElement("div");
-      card.className = "tarefa";
+      card.className = "taskCard";
 
       const titulo = document.createElement("h2");
       titulo.className = "titulo";
@@ -95,7 +95,7 @@ const criarCard = async () => {
 criarCard();
 
 const adicionar = document.getElementById("adicionar");
-adicionar.addEventListener("click", (async) => {
+adicionar.addEventListener("click", async => {
   const criarTarefaDiv = document.getElementById("criar_tarefa");
   criarTarefaDiv.style.display = "flex";
 });
@@ -105,20 +105,30 @@ const criarComentarios = async (tarefa) => {
   closeButton.style.display = "block";
 
   const cardContainer = document.getElementById("cardContainer");
-  cardContainer.className = "main";
+  cardContainer.className = "cardContainer";
 
   const url = `http://localhost:5080/comentarios`;
   const response = await fetch(url);
   const comentarios = await response.json();
-
+  
   const urlUser = `http://localhost:5080/usuario`;
   const resposta = await fetch(urlUser);
   const usuario = await resposta.json();
-
+  
+  const container = document.createElement("div");
+  container.className = "comentarios";
+  
+  const commentInput = document.createElement("div");
+  commentInput.className = "comment_input";
+  
+  const input = document.createElement("input");
+  input.classList = "comentario";
+  input.setAttribute("id", "input")
+  input.setAttribute("type", "text")
+  
   comentarios.forEach(async (elemento) => {
+    console.log(elemento);
     if (tarefa == elemento.tarefaId) {
-      const container = document.createElement("div");
-      container.className = "comentarios";
 
       const comments = document.createElement("div");
       comments.className = "comentarios-layout";
@@ -147,14 +157,6 @@ const criarComentarios = async (tarefa) => {
         }
       });
 
-      const commentInput = document.createElement("div");
-      commentInput.className = "comment_input";
-      
-      const input = document.createElement("input");
-      input.classList = "comentario";
-      input.setAttribute("id", "input")
-      input.setAttribute("type", "text")
-     
       const enviarIcon = document.createElement("img");
       enviarIcon.className = "enviar";
       enviarIcon.src = "../img/send-alt-1-svgrepo-com.svg";
@@ -176,11 +178,11 @@ const criarComentarios = async (tarefa) => {
       enviarIcon.addEventListener("click", function () {
         const texto = input.value
 
-        adicionarComentario(tarefa,texto);
+       adicionarComentario(tarefa,texto);
       });
     } else {
         const cardContainer = document.getElementById("cardContainer");
-        cardContainer.className = "main";
+        cardContainer.className = "cardContainer";
 
         const container = document.createElement("div");
         container.className = "comentarios";

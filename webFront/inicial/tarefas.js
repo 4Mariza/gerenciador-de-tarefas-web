@@ -25,7 +25,6 @@ const criarTarefa = async () => {
         console.error(error);
       }
       alert("Tarefa adicionada com sucesso!");
-      //criarTarefaDiv.style.display = "none";
       window.location.reload();
     } else {
       alert("Preencha os campos corretamente!");
